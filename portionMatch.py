@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 
-image1 = cv2.imread('office54.png')
-image2 = cv2.imread('office54.png')
-image3 = cv2.imread('office54-eng.png')
+image1 = cv2.imread('img/office54.png')
+image2 = cv2.imread('img/office54.png')
+image3 = cv2.imread('img/office54-eng.png')
 
 img_size = (100, 100)
 

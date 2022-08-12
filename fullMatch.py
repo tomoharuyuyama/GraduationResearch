@@ -2,11 +2,11 @@
 import cv2
 import numpy as np
 
-image1 = cv2.imread('img/office54.png')
-image2 = cv2.imread('img/office54.png')
-image3 = cv2.imread('img/office54-eng.png')
+image1 = cv2.imread('img/killResult.png')
+image2 = cv2.imread('img/killResult.png')
+image3 = cv2.imread('img/deathResult.png')
 
 print(np.array_equal(image1, image2))
-print(np.array_equal(image1, image3))
 # True
+print(np.array_equal(image1, image3))
 # False

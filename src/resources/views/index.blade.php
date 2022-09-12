@@ -409,8 +409,13 @@
     <article class="flex">
         <div class="side h-screen bg-indigo-900 text-white w-60 h-screen pl-5 pt-10 bg-dark">
             <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
+            <ul class="mt-10">
+                <li class="mt-2">ポーカー</li>
+                <li class="mt-2">スプラトゥーン</li>
+                <li class="mt-2">スプラトゥーン３</li>
+            </ul>
         </div>
-        <div class="content h-screen w-screen w-screen h-screen pl-5 pt-10">
+        <div class="content h-screen w-screen w-screen h-screen pl-5 pt-10 bg-slate-100">
             <p>メインコンテンツ</p>
         </div>
     </article>

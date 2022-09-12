@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'General\GeneralController@index')->name('top_page');
+// Route::get('/', 'Task\TaskUserController@index')->name('task_user');

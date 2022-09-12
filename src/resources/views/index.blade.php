@@ -407,8 +407,8 @@
 
 <body>
     <article class="flex">
-        <div class="side h-screen bg-indigo-900 text-white w-52 h-screen pl-5 pt-10">
-            <p>サイドバー</p>
+        <div class="side h-screen bg-indigo-900 text-white w-60 h-screen pl-5 pt-10 bg-dark">
+            <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
         </div>
         <div class="content h-screen w-screen w-screen h-screen pl-5 pt-10">
             <p>メインコンテンツ</p>

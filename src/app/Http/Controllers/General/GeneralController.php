@@ -28,4 +28,8 @@ class GeneralController extends Controller
     {
         return view('table-setting');
     }
+    public function columnSetting(Request $request)
+    {
+        return view('column-setting');
+    }
 }

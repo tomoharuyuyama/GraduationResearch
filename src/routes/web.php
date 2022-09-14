@@ -22,3 +22,4 @@ Route::get('/table-list', 'App\Http\Controllers\General\GeneralController@tableL
 Route::get('/upload', 'App\Http\Controllers\General\GeneralController@upload')->name('upload');
 Route::get('/result', 'App\Http\Controllers\General\GeneralController@result')->name('result');
 Route::get('/table-setting', 'App\Http\Controllers\General\GeneralController@tableSetting')->name('table_setting');
+Route::get('/column-setting', 'App\Http\Controllers\General\GeneralController@columnSetting')->name('column_setting');

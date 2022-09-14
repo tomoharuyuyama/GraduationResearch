@@ -20,4 +20,8 @@ class GeneralController extends Controller
     {
         return view('upload');
     }
+    public function result(Request $request)
+    {
+        return view('result');
+    }
 }

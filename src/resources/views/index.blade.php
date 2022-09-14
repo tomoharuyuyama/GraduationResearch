@@ -1,6 +1,6 @@
 <x-app>
     <h2 class="bold text-3xl mb-14">トップページ</h2>
-    <div class="p-5 w-full bg-white rounded-md mb-14">
+    <div class="p-5 w-full bg-white rounded-md mb-14 drop-shadow-md">
         <table class="table-auto w-full">
             <thead>
                 <tr class="pb-5">

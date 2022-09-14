@@ -623,6 +623,9 @@ video {
 .h-10 {
   height: 2.5rem;
 }
+.h-auto {
+  height: auto;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -652,6 +655,9 @@ video {
 }
 .max-w-6xl {
   max-width: 72rem;
+}
+.max-w-screen-xl {
+  max-width: 1280px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -696,6 +702,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-scroll {
+  overflow: scroll;
+}
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -724,9 +733,6 @@ video {
 }
 .border-b {
   border-bottom-width: 1px;
-}
-.border-b-2 {
-  border-bottom-width: 2px;
 }
 .border-gray-200 {
   --tw-border-opacity: 1;

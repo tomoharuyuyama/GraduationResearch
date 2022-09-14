@@ -24,4 +24,8 @@ class GeneralController extends Controller
     {
         return view('result');
     }
+    public function tableSetting(Request $request)
+    {
+        return view('table-setting');
+    }
 }

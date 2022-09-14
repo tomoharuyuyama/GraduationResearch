@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'App\Http\Controllers\General\GeneralController@index')->name('top_page');
+Route::get('/table-list', 'App\Http\Controllers\General\GeneralController@tableList')->name('table_list');
+Route::get('/upload', 'App\Http\Controllers\General\GeneralController@upload')->name('upload');

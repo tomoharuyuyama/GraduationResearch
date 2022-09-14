@@ -12,4 +12,12 @@ class GeneralController extends Controller
         $test = "やあ";
         return view('index', compact('test'));
     }
+    public function tableList(Request $request)
+    {
+        return view('table-list');
+    }
+    public function upload(Request $request)
+    {
+        return view('upload');
+    }
 }

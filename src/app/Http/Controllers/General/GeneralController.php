@@ -32,4 +32,8 @@ class GeneralController extends Controller
     {
         return view('column-setting');
     }
+    public function teacherData(Request $request)
+    {
+        return view('teacher-data');
+    }
 }

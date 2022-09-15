@@ -24,3 +24,4 @@ Route::get('/result', 'App\Http\Controllers\General\GeneralController@result')->
 Route::get('/table-setting', 'App\Http\Controllers\General\GeneralController@tableSetting')->name('table_setting');
 Route::get('/column-setting', 'App\Http\Controllers\General\GeneralController@columnSetting')->name('column_setting');
 Route::get('/teacher-data', 'App\Http\Controllers\General\GeneralController@teacherData')->name('teacher_data');
+Route::get('/record-list', 'App\Http\Controllers\General\GeneralController@recordList')->name('record_list');

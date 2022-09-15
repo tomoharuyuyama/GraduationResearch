@@ -36,4 +36,8 @@ class GeneralController extends Controller
     {
         return view('teacher-data');
     }
+    public function recordList(Request $request)
+    {
+        return view('record-list');
+    }
 }

@@ -5,7 +5,7 @@
         <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
     </div>
     <div class=" pb-5">
-        <p class="bold text-1xl font-bold mb-5">Table name</p>
+        <p class="bold text-1xl font-bold mb-5">Columun name</p>
         <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
     </div>
     <div class=" pb-5">

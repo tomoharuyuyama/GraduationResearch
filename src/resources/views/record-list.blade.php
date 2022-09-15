@@ -2,7 +2,7 @@
     <h2 class="bold text-3xl mb-14">レコード一覧</h2>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Table name</p>
-        <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
+        <div class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5 bg-white pt-2">スプラトゥーン2</div>
     </div>
     <div class="">
         <p class="bold text-1xl font-bold mb-5">Base image</p>
@@ -56,9 +56,9 @@
                         <td class="pb-5 border-b border-slate-300">2022-07-24 13:23:35</td>
                     </tr>
                     <tr>
-                        <td class="pb-5 border-b border-slate-300">0</td>
-                        <td class="pb-5 border-b border-slate-300">isWin</td>
-                        <td class="pb-5 border-b border-slate-300">2022-07-24 13:23:35</td>
+                        <td class="">0</td>
+                        <td class="">isWin</td>
+                        <td class="">2022-07-24 13:23:35</td>
                     </tr>
                 </tbody>
             </table>

@@ -47,7 +47,7 @@
             <div class="">
                 <div class="">
                     <p>Preview</p>
-                    <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-28 w-auto">
+                    <img src="{{ asset('images/weapon1.png') }}" alt="preview image" class="h-28 w-auto">
                 </div>
             </div>
             <div class="flex items-end ml-5 pl-5">

@@ -27,7 +27,7 @@
     </div>
     <a href="{{ route('top_page') }}">
         <button
-            class="bg-white text-slate-300 rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
+            class="bg-white text-slate-300 rounded-md bg-transparent block px-3 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md w-32 text-center">
             Back
         </button>
     </a>

@@ -22,28 +22,28 @@
                     <tr>
                         <td class="pb-5 border-b border-slate-300">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
                         <td class="pb-5 border-b border-slate-300">
-                            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                            <img src="{{ asset('images/weapon1.png') }}" alt="preview image" class="h-14 w-auto">
                         </td>
                         <td class="pb-5 border-b border-slate-300">122</td>
                     </tr>
                     <tr>
                         <td class="pb-5 border-b border-slate-300">Witchy Woman</td>
                         <td class="pb-5 border-b border-slate-300">
-                            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                            <img src="{{ asset('images/weapon2.png') }}" alt="preview image" class="h-14 w-auto">
                         </td>
                         <td class="pb-5 border-b border-slate-300">322</td>
                     </tr>
                     <tr>
                         <td class="pb-5 border-b border-slate-300">Shining Star</td>
                         <td class="pb-5 border-b border-slate-300">
-                            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                            <img src="{{ asset('images/weapon3.png') }}" alt="preview image" class="h-14 w-auto">
                         </td>
                         <td class="pb-5 border-b border-slate-300">13</td>
                     </tr>
                     <tr>
                         <td>Shining Star</td>
                         <td>
-                            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                            <img src="{{ asset('images/weapon4.png') }}" alt="preview image" class="h-14 w-auto">
                         </td>
                         <td>98</td>
                     </tr>

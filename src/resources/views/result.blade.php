@@ -12,9 +12,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="pb-5 border-b border-slate-300">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                    <td class="pb-5 border-b border-slate-300">kill</td>
                     <td class="pb-5 border-b border-slate-300">
-                        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                        <img src="{{ asset('images/kill12.png') }}" alt="preview image" class="h-14 w-auto">
                     </td>
                     <td class="pb-5 border-b border-slate-300">12</td>
                     <td class="pb-5 border-b border-slate-300">
@@ -22,9 +22,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="pb-5 border-b border-slate-300">Witchy Woman</td>
+                    <td class="pb-5 border-b border-slate-300">special</td>
                     <td class="pb-5 border-b border-slate-300">
-                        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                        <img src="{{ asset('images/special3.png') }}" alt="preview image" class="h-14 w-auto">
                     </td>
                     <td class="pb-5 border-b border-slate-300">3</td>
                     <td class="pb-5 border-b border-slate-300">
@@ -32,9 +32,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="pb-5 border-b border-slate-300">Shining Star</td>
+                    <td class="pb-5 border-b border-slate-300">isWin</td>
                     <td class="pb-5 border-b border-slate-300">
-                        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                        <img src="{{ asset('images/isWin.png') }}" alt="preview image" class="h-14 w-auto">
                     </td>
                     <td class="pb-5 border-b border-slate-300">1</td>
                     <td class="pb-5 border-b border-slate-300">
@@ -42,9 +42,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Shining Star</td>
+                    <td>weapon</td>
                     <td>
-                        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-14 w-auto">
+                        <img src="{{ asset('images/weapon1.png') }}" alt="preview image" class="h-14 w-auto">
                     </td>
                     <td>undefinde</td>
                     <td>

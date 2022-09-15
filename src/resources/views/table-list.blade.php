@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | スプラトゥーン2
+    </x-slot>
     <h2 class="bold text-3xl mb-14">スプラトゥーン2</h2>
     <div class="flex items-center mb-5">
         <div>

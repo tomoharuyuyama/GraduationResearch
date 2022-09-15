@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | カラム設定
+    </x-slot>
     <h2 class="bold text-3xl mb-14">カラム設定</h2>
     <h3 class="bold text-1xl font-bold mb-5">Edit table name</h3>
     <div class="flex items-center justify-between mb-5 pb-5">

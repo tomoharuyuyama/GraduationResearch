@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | 教師データ
+    </x-slot>
     <h2 class="bold text-3xl mb-14">教師データ</h2>
     <div class="">
         <p class="bold text-1xl font-bold mb-5">Base image</p>

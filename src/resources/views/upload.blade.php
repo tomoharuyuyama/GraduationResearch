@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | 画像アップロード
+    </x-slot>
     <h2 class="bold text-3xl mb-14">画像アップロード</h2>
 
     {{-- <form action="" method="post" class=""> --}}

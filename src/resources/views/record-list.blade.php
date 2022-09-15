@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | レコード一覧
+    </x-slot>
     <h2 class="bold text-3xl mb-14">レコード一覧</h2>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Table name</p>

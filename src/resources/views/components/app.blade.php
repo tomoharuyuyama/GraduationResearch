@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{-- <title>{{ $test }}</title> --}}
+    <title>{{ $title }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -408,7 +408,9 @@
 <body>
     <div class="flex">
         <div class="side bg-indigo-900 text-white w-60 h-screen pl-5 pt-10 bg-dark">
-            <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
+            <a href="{{ route('top_page') }}">
+                <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
+            </a>
             <ul class="mt-10">
                 <li class="mt-2">
                     <a href="{{ route('table_list') }}">

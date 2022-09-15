@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | 検出結果
+    </x-slot>
     <h2 class="bold text-3xl mb-14">検出結果</h2>
     <div class="p-5 w-full bg-white rounded-md mb-14 drop-shadow-md">
         <table class="table-auto w-full border-separate border-spacing-y-8">

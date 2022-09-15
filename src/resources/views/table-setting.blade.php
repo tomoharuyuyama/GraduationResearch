@@ -1,4 +1,7 @@
 <x-app>
+    <x-slot name="title">
+        データ収集 | テーブル設定
+    </x-slot>
     <h2 class="bold text-3xl mb-14">テーブル設定</h2>
     <h3 class="bold text-1xl font-bold mb-5">Edit table name</h3>
     <form action="" method="post" class="mb-5">

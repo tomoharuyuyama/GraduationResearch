@@ -11,8 +11,12 @@
             </thead>
             <tbody>
                 <tr class="pb-5">
-                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                    <td>Malcolm Lockyer</td>
+                    <td>
+                        <a href="{{ route('table_list') }}">
+                            スプラトゥーン2
+                        </a>
+                    </td>
+                    <td>346</td>
                     <td class="flex flex-row-reverse">
                         <button
                             class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
@@ -25,8 +29,8 @@
                     </td>
                 </tr>
                 <tr class="pb-5">
-                    <td>Witchy Woman</td>
-                    <td>The Eagles</td>
+                    <td>ポーカー</td>
+                    <td>229</td>
                     <td class="flex flex-row-reverse">
                         <button
                             class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
@@ -39,8 +43,8 @@
                     </td>
                 </tr>
                 <tr class="pb-5">
-                    <td>Shining Star</td>
-                    <td>Earth, Wind, and Fire</td>
+                    <td>スプラトゥーン</td>
+                    <td>953</td>
                     <td class="flex flex-row-reverse">
                         <button
                             class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">

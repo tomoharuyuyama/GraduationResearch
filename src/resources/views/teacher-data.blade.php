@@ -6,8 +6,7 @@
     </div>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Columun name</p>
-        <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
-    </div>
+        <div class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5 bg-white pt-2">weapon</div>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Teacher list</p>
         <div class="p-5 w-full bg-white rounded-md mb-14 drop-shadow-md">
@@ -52,12 +51,14 @@
             </table>
         </div>
     </div>
-    <form action="" method="post" class="">
+    {{-- <form action="" method="post" class=""> --}}
         <div class="flex">
-            <button
-                class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-1 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
-                Back
-            </button>
+            <a href="{{ route('column_setting') }}">
+                <button
+                    class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
+                    Back
+                </button>
+            </a>
         </div>
-    </form>
+    {{-- </form> --}}
 </x-app>

@@ -410,12 +410,16 @@
         <div class="side bg-indigo-900 text-white w-60 h-screen pl-5 pt-10 bg-dark">
             <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
             <ul class="mt-10">
+                <li class="mt-2">
+                    <a href="{{ route('table_list') }}">
+                        スプラトゥーン2
+                    </a>
+                </li>
                 <li class="mt-2">ポーカー</li>
                 <li class="mt-2">スプラトゥーン</li>
-                <li class="mt-2">スプラトゥーン2</li>
             </ul>
         </div>
-        <div class="h-screen w-screen pt-10 bg-slate-100 px-10 overflow-scroll">
+        <div class="h-screen w-screen pt-10 bg-slate-100 px-10 overflow-scroll pb-10">
             <div class="max-w-screen-xl">
                 {{ $slot }}
             </div>

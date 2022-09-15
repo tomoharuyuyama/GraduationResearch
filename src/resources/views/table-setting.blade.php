@@ -25,10 +25,12 @@
                     <td class="pb-5 border-b border-slate-300">weapon</td>
                     <td class="pb-5 border-b border-slate-300">229</td>
                     <td class="pb-5 border-b border-slate-300 flex flex-row-reverse">
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold border border-slate-300 ml-3">
-                            <input type="submit" value="Setting" class="text-slate-300">
-                        </button>
+                        <a href="{{ route('column_setting') }}">
+                            <button
+                                class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold border border-slate-300 ml-3">
+                                <input type="submit" value="Setting" class="text-slate-300">
+                            </button>
+                        </a>
                         <button
                             class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold ml-5 border border-red-300">
                             <input type="submit" value="Delete" class="text-red-300">
@@ -76,8 +78,10 @@
             </button>
         </div>
     </form>
-    <button
-        class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-1 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
-        Back
-    </button>
+    <a href="{{ route('table_list') }}">
+        <button
+            class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
+            Back
+        </button>
+    </a>
 </x-app>

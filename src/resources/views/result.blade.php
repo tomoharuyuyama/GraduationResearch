@@ -54,16 +54,20 @@
             </tbody>
         </table>
     </div>
-    <form action="" method="post" class="">
+    {{-- <form action="" method="post" class=""> --}}
         <div class="flex">
-            <button
-                class="text-center text-white rounded-md bg-indigo-300 block w-32 py-3 mb-5 text-right drop-shadow-md font-bold">
-                <input type="submit" value="Submit" class="">
-            </button>
-            <button
-                class="text-center ml-5 bg-white text-slate-300 rounded-md bg-transparent block w-32 py-1 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
-                Back
-            </button>
+            <a href="{{ route('upload') }}">
+                <button
+                    class="text-center text-white rounded-md bg-indigo-300 block w-32 py-3 mb-5 text-right drop-shadow-md font-bold">
+                    <input type="submit" value="Submit" class="">
+                </button>
+            </a>
+            <a href="{{ route('upload') }}">
+                <button
+                    class="text-center ml-5 bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
+                    Cancel
+                </button>
+            </a>
         </div>
-    </form>
+    {{-- </form> --}}
 </x-app>

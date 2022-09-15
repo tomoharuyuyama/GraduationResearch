@@ -58,11 +58,13 @@
             </div>
         </div>
     </div>
-    <a href="" class="font-bold block mb-5 pb-5">
+    <a href="{{ route('teacher_data') }}" class="font-bold block mb-5 pb-5">
         教師データ確認ページ→
     </a>
-    <button
-        class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-1 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
-        Back
-    </button>
+    <a href="{{ route('table_setting') }}">
+        <button
+            class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
+            Back
+        </button>
+    </a>
 </x-app>

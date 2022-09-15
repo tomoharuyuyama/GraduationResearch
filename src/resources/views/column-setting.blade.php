@@ -13,8 +13,8 @@
         </form>
         <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-full w-auto">
     </div>
-    <h3 class="bold text-1xl font-bold mb-5">Colmun list</h3>
-    <div class="mb-5 pb-5 flex justify-between">
+    <h3 class="bold text-1xl font-bold mb-5">Setting range of detection</h3>
+    <div class="mb-5 pb-5 flex justify-between mb-5 pb-5">
         <div class="flex items-end">
             <div class="">
                 <div class="flex items-center mb-5">
@@ -43,17 +43,24 @@
                 <input type="submit" value="Make preview" class="">
             </button>
         </div>
-    </div>
-    <h3 class="bold text-1xl mb-5 font-bold">Add column</h3>
-    <form action="" method="post" class="">
-        <div class="flex mb-5">
-            <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
-            <button
-                class="text-white rounded-md bg-indigo-300 block px-8 h-auto text-right drop-shadow-md font-bold ml-5 mb-5">
-                <input type="submit" value="Submit" class="">
-            </button>
+        <div class="flex">
+            <div class="">
+                <div class="">
+                    <p>Preview</p>
+                    <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-28 w-auto">
+                </div>
+            </div>
+            <div class="flex items-end ml-5 pl-5">
+                <button
+                    class="text-indigo-300 border border-indigo-300 rounded-md bg-white block px-8 h-10 text-right drop-shadow-md font-bold ml-5 mb-5">
+                    <input type="submit" value="Make preview" class="">
+                </button>
+            </div>
         </div>
-    </form>
+    </div>
+    <a href="" class="font-bold block mb-5 pb-5">
+        教師データ確認ページ→
+    </a>
     <button
         class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-1 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
         Back

@@ -12,8 +12,16 @@ class GeneralController extends Controller
     public function index(Request $request)
     {
         $tables = OriginalTable::all();
-        // dd($tables);
         return view('index', compact('tables'));
+}
+    public function add_table(Request $request)
+    {
+        $newTable = new OriginalTable;
+        $newTable->name = $request->table_name;
+        $newTable->base_img_path = $request->base_image;
+        $newTable->save();
+        
+        return redirect()->route('top_page');
     }
     public function tableList(Request $request)
     {

@@ -412,13 +412,23 @@
                 <h1 class="bold text-3xl border-b border-white pb-4 inline-block">データ収集</h1>
             </a>
             <ul class="mt-10">
-                <li class="mt-2">
-                    <a href="{{ route('table_list') }}">
-                        スプラトゥーン2
-                    </a>
-                </li>
-                <li class="mt-2">ポーカー</li>
-                <li class="mt-2">スプラトゥーン</li>
+                @if (isset($tables))
+                    @foreach ($tables as $table)
+                        <li class="mt-2">
+                            <a href="{{ route('table_list') }}">
+                                {{$table->name}}
+                            </a>
+                        </li>
+                    @endforeach
+                @else
+                    <li class="mt-2">
+                        <a href="{{ route('table_list') }}">
+                            {{$table->name}}
+                        </a>
+                    </li>
+                    <li class="mt-2">ポーカー</li>
+                    <li class="mt-2">スプラトゥーン</li>
+                @endif
             </ul>
         </div>
         <div class="h-screen w-screen pt-10 bg-slate-100 px-10 overflow-scroll pb-10">

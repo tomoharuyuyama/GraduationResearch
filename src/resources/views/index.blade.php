@@ -1,4 +1,4 @@
-<x-app>
+<x-app :tables="$tables">
     <x-slot name="title">
         データ収集 | Top
     </x-slot>

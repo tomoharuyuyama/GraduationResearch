@@ -5,12 +5,15 @@ namespace App\Http\Controllers\General;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\OriginalTable;
+
 class GeneralController extends Controller
 {
     public function index(Request $request)
     {
-        $test = "やあ";
-        return view('index', compact('test'));
+        $tables = OriginalTable::all();
+        // dd($tables);
+        return view('index', compact('tables'));
     }
     public function tableList(Request $request)
     {

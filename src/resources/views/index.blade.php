@@ -13,54 +13,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="pb-5">
-                    <td class="pb-5 border-b border-slate-300">
-                        <a href="{{ route('table_list') }}">
-                            スプラトゥーン2
-                        </a>
-                    </td>
-                    <td class="pb-5 border-b border-slate-300">346</td>
-                    <td class="flex flex-row-reverse pb-5 border-b border-slate-300">
-                        <a href="{{ route('table_setting') }}">
-                            <button
-                                class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
-                                <input type="submit" value="Setting" class="text-slate-300">
-                            </button>
-                        </a>
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
-                            <input type="submit" value="Delete" class="text-red-300">
-                        </button>
-                    </td>
-                </tr>
-                <tr class="pb-5">
-                    <td class="pb-5 border-b border-slate-300">ポーカー</td>
-                    <td class="pb-5 border-b border-slate-300">229</td>
-                    <td class="flex flex-row-reverse pb-5 border-b border-slate-300">
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
-                            <input type="submit" value="Setting" class="text-slate-300">
-                        </button>
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
-                            <input type="submit" value="Delete" class="text-red-300">
-                        </button>
-                    </td>
-                </tr>
-                <tr class="">
-                    <td class="">スプラトゥーン</td>
-                    <td class="">953</td>
-                    <td class="flex flex-row-reverse ">
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
-                            <input type="submit" value="Setting" class="text-slate-300">
-                        </button>
-                        <button
-                            class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
-                            <input type="submit" value="Delete" class="text-red-300">
-                        </button>
-                    </td>
-                </tr>
+                @foreach ($tables as $table)
+                    {{-- @if (!$loop->last) --}}
+                        <tr class="pb-5">
+                            <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }} ">
+                                <a href="{{ route('table_list') }}">
+                                    {{$table->name}}
+                                </a>
+                            </td>
+                            <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">346</td>
+                            <td class="flex flex-row-reverse {{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">
+                                <a href="{{ route('table_setting') }}">
+                                    <button
+                                        class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
+                                        <input type="submit" value="Setting" class="text-slate-300">
+                                    </button>
+                                </a>
+                                <button
+                                    class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
+                                    <input type="submit" value="Delete" class="text-red-300">
+                                </button>
+                            </td>
+                        </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

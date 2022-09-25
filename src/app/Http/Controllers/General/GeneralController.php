@@ -6,16 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\OriginalTable;
+use App\Models\Record;
 
 class GeneralController extends Controller
 {
     public function index(Request $request)
     {
         $tables = OriginalTable::all();
-        return view('index', compact('tables'));
+        $record = Record::all();
+        return view('index', compact('tables', 'record'));
 }
     public function add_table(Request $request)
     {
+        // オリジナルテーブルインサート
         $newTable = new OriginalTable;
         $newTable->name = $request->table_name;
         $newTable->base_img_path = $request->base_image;

@@ -68,11 +68,11 @@ class GeneralController extends Controller
 
         return view('table-setting', compact('tables', 'selectedTable', 'tableColumns', 'recordCounts'));
     }
-    public function columnSetting(Request $request, $tableId)
+    public function columnSetting(Request $request, $tableId, $columnId)
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        return view('column-setting', compact('tables', 'selectedTable'));
+        return view('column-setting', compact('tables', 'selectedTable', 'columnId'));
     }
     public function teacherData(Request $request, $tableId)
     {

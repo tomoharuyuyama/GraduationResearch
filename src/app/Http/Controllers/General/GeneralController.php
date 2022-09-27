@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\OriginalTable;
 use App\Models\Record;
+use App\Models\TableColumn;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 
 class GeneralController extends Controller
@@ -57,7 +58,15 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        return view('table-setting', compact('tables', 'selectedTable'));
+        $tableColumns = TableColumn::all();
+
+        $recordCounts = [];
+        foreach ($tableColumns as $tableColumn) {
+            $recordCount = Record::where('column_id', $tableColumn->id)->count();
+            array_push($recordCounts, $recordCount);
+        }
+
+        return view('table-setting', compact('tables', 'selectedTable', 'tableColumns', 'recordCounts'));
     }
     public function columnSetting(Request $request, $tableId)
     {

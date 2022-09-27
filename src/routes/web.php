@@ -19,10 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\General\GeneralController@index')->name('top_page');
 Route::post('/', 'App\Http\Controllers\General\GeneralController@add_table')->name('add_table');
-Route::get('/table-list', 'App\Http\Controllers\General\GeneralController@tableList')->name('table_list');
-Route::get('/upload', 'App\Http\Controllers\General\GeneralController@upload')->name('upload');
-Route::get('/result', 'App\Http\Controllers\General\GeneralController@result')->name('result');
-Route::get('/table-setting', 'App\Http\Controllers\General\GeneralController@tableSetting')->name('table_setting');
-Route::get('/column-setting', 'App\Http\Controllers\General\GeneralController@columnSetting')->name('column_setting');
-Route::get('/teacher-data', 'App\Http\Controllers\General\GeneralController@teacherData')->name('teacher_data');
-Route::get('/record-list', 'App\Http\Controllers\General\GeneralController@recordList')->name('record_list');
+Route::get('/{tableId}/table-list', 'App\Http\Controllers\General\GeneralController@tableList')->name('table_list');
+Route::get('/{tableId}/upload', 'App\Http\Controllers\General\GeneralController@upload')->name('upload');
+Route::get('/{tableId}/result', 'App\Http\Controllers\General\GeneralController@result')->name('result');
+Route::get('/{tableId}/table-setting', 'App\Http\Controllers\General\GeneralController@tableSetting')->name('table_setting');
+Route::get('/{tableId}/column-setting', 'App\Http\Controllers\General\GeneralController@columnSetting')->name('column_setting');
+Route::get('/{tableId}/teacher-data', 'App\Http\Controllers\General\GeneralController@teacherData')->name('teacher_data');
+Route::get('/{tableId}/record-list', 'App\Http\Controllers\General\GeneralController@recordList')->name('record_list');

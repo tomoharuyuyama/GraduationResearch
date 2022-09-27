@@ -1,23 +1,23 @@
-<x-app>
+<x-app :tables="$tables">
     <x-slot name="title">
-        データ収集 | スプラトゥーン2
+        データ収集 | {{ $selectedTable->name }}
     </x-slot>
-    <h2 class="bold text-3xl mb-14">スプラトゥーン2</h2>
+    <h2 class="bold text-3xl mb-14">{{ $selectedTable->name }}</h2>
     <div class="flex items-center mb-5">
         <div>
-            <a href="{{ route('upload') }}">
+            <a href="{{ route('upload', ['tableId' => $selectedTable->id]) }}">
                 <button
                     class="text-white rounded-md bg-indigo-300 text-center block w-56 py-3 mb-5 text-right drop-shadow-md font-bold drop-shadow-md">
                     Upload image
                 </button>
             </a>
-            <a href="{{ route('table_setting') }}">
+            <a href="{{ route('table_setting', ['tableId' => $selectedTable->id]) }}">
                 <button
                     class="text-white rounded-md bg-indigo-300 text-center block w-56 py-3 mb-5 text-right drop-shadow-md font-bold drop-shadow-md">
                     Setting table
                 </button>
             </a>
-            <a href="{{ route('record_list') }}">
+            <a href="{{ route('record_list', ['tableId' => $selectedTable->id]) }}">
                 <button
                     class="text-white rounded-md bg-indigo-300 text-center block w-56 py-3 mb-5 text-right drop-shadow-md font-bold drop-shadow-md">
                     Table records

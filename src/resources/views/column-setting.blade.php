@@ -1,4 +1,4 @@
-<x-app>
+<x-app :tables="$tables">
     <x-slot name="title">
         データ収集 | カラム設定
     </x-slot>
@@ -61,10 +61,10 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('teacher_data') }}" class="font-bold block mb-5 pb-5">
+    <a href="{{ route('teacher_data', ['tableId' => $selectedTable->id]) }}" class="font-bold block mb-5 pb-5">
         教師データ確認ページ→
     </a>
-    <a href="{{ route('table_setting') }}">
+    <a href="{{ route('table_setting', ['tableId' => $selectedTable->id]) }}">
         <button
             class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
             Back

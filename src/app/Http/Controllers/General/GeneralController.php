@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\OriginalTable;
 use App\Models\Record;
+use SebastianBergmann\CodeCoverage\Driver\Selector;
 
 class GeneralController extends Controller
 {
@@ -15,7 +16,7 @@ class GeneralController extends Controller
         $tables = OriginalTable::all();
         $record = Record::all();
         return view('index', compact('tables', 'record'));
-}
+    }
     public function add_table(Request $request)
     {
         // オリジナルテーブルインサート
@@ -23,35 +24,51 @@ class GeneralController extends Controller
         $newTable->name = $request->table_name;
         $newTable->base_img_path = $request->base_image;
         $newTable->save();
-        
+
         return redirect()->route('top_page');
     }
-    public function tableList(Request $request)
+    public function tableList(Request $request, $tableId)
     {
-        return view('table-list');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+
+        return view('table-list', compact('tables', 'selectedTable'));
     }
-    public function upload(Request $request)
+    public function upload(Request $request, $tableId)
     {
-        return view('upload');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        // dd($selectedTable);
+        return view('upload', compact('tables', 'selectedTable'));
     }
-    public function result(Request $request)
+    public function result(Request $request, $tableId)
     {
-        return view('result');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        return view('result', compact('tables', 'selectedTable'));
     }
-    public function tableSetting(Request $request)
+    public function tableSetting(Request $request, $tableId)
     {
-        return view('table-setting');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        return view('table-setting', compact('tables', 'selectedTable'));
     }
-    public function columnSetting(Request $request)
+    public function columnSetting(Request $request, $tableId)
     {
-        return view('column-setting');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        return view('column-setting', compact('tables', 'selectedTable'));
     }
-    public function teacherData(Request $request)
+    public function teacherData(Request $request, $tableId)
     {
-        return view('teacher-data');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        return view('teacher-data', compact('tables', 'selectedTable'));
     }
-    public function recordList(Request $request)
+    public function recordList(Request $request, $tableId)
     {
-        return view('record-list');
+        $tables = OriginalTable::all();
+        $selectedTable = OriginalTable::find($tableId);
+        return view('record-list', compact('tables', 'selectedTable'));
     }
 }

@@ -1,4 +1,4 @@
-<x-app>
+<x-app :tables="$tables">
     <x-slot name="title">
         データ収集 | 画像アップロード
     </x-slot>
@@ -12,19 +12,19 @@
                 <p class="bold text-1xl font-bold mb-5">Base image</p>
                 <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
             </div>
-            <div class="">
+            {{-- <div class="">
                 <p class="bold text-1xl font-bold mb-5">Upload image</p>
                 <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5 pl-5">
-            </div>
+            </div> --}}
         </div>
         <div class="flex">
-            <a href="{{ route('result') }}">
+            <a href="{{ route('result', ['tableId' => $selectedTable->id]) }}">
                 <button
                     class="text-center text-white rounded-md bg-indigo-300 block w-32 py-3 mb-5 text-right drop-shadow-md font-bold">
                     Submit
                 </button>
             </a>
-            <a href="{{ route('table_list') }}" class="">
+            <a href="{{ route('table_list', ['tableId' => $selectedTable->id]) }}" class="">
                 <button
                 class="text-center ml-5 bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 text-right font-bold border border-slate-300 drop-shadow-md">
                 Back

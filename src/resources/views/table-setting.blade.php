@@ -1,4 +1,4 @@
-<x-app>
+<x-app :tables="$tables">
     <x-slot name="title">
         データ収集 | テーブル設定
     </x-slot>
@@ -28,7 +28,7 @@
                     <td class="pb-5 border-b border-slate-300">weapon</td>
                     <td class="pb-5 border-b border-slate-300">229</td>
                     <td class="pb-5 border-b border-slate-300 flex flex-row-reverse">
-                        <a href="{{ route('column_setting') }}">
+                        <a href="{{ route('column_setting', ['tableId' => $selectedTable->id]) }}">
                             <button
                                 class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold border border-slate-300 ml-3">
                                 <input type="submit" value="Setting" class="text-slate-300">
@@ -81,7 +81,7 @@
             </button>
         </div>
     </form>
-    <a href="{{ route('table_list') }}">
+    <a href="{{ route('table_list', ['tableId' => $selectedTable->id]) }}">
         <button
             class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 text-right font-bold border border-slate-300 drop-shadow-md ml-auto">
             Back

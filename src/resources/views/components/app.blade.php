@@ -415,7 +415,7 @@
                 @if (isset($tables))
                     @foreach ($tables as $table)
                         <li class="mt-2">
-                            <a href="{{ route('table_list') }}">
+                            <a href="{{ route('table_list', ['tableId' => $table->id]) }}">
                                 {{$table->name}}
                             </a>
                         </li>

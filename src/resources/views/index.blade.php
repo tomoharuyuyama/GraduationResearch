@@ -24,7 +24,7 @@
                         <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">
                             {{ $record->where('original_table_id', $table->id)->count() }}</td>
                         <td class="flex flex-row-reverse {{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">
-                            <a href="{{ route('table_setting') }}">
+                            <a href="{{ route('table_setting', ['tableId' => $table->id]) }}">
                                 <button
                                     class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold border border-slate-300 ml-3">
                                     <input type="submit" value="Setting" class="text-slate-300">

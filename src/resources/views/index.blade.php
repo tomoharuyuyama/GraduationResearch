@@ -12,6 +12,8 @@
                     <th class="text-left"></th>
                 </tr>
             </thead>
+            {{-- <form action="{{ route('add_table') }}" method="post">
+            </form> --}}
             <tbody>
                 @foreach ($tables as $table)
                     {{-- @if (!$loop->last) --}}
@@ -30,10 +32,12 @@
                                     <input type="submit" value="Setting" class="text-slate-300">
                                 </button>
                             </a>
-                            <button
-                                class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
-                                <input type="submit" value="Delete" class="text-red-300">
-                            </button>
+                            <a href="{{ route('delete_table', ['tableId' => $table->id]) }}">
+                                <button
+                                    class="text-white rounded-md bg-transparent block px-3 py-1 mb-5 text-right font-bold ml-5 border border-red-300">
+                                    <input type="submit" value="Delete" class="text-red-300">
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

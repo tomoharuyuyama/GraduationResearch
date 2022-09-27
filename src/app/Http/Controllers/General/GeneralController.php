@@ -27,6 +27,12 @@ class GeneralController extends Controller
 
         return redirect()->route('top_page');
     }
+    public function delete_table(Request $request, $tableId)
+    {
+        // オリジナルテーブルを削除
+        OriginalTable::where('id', $tableId)->delete();
+        return redirect()->route('top_page');
+    }
     public function tableList(Request $request, $tableId)
     {
         $tables = OriginalTable::all();

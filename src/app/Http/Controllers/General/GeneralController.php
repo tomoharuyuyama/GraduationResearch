@@ -107,6 +107,10 @@ class GeneralController extends Controller
     {
         $editColumn = TableColumn::find($request->columnId);
         $editColumn->column_name = $request->column_name;
+        $editColumn->range_x = $request->range_x;
+        $editColumn->range_y = $request->range_y;
+        $editColumn->range_w = $request->range_w;
+        $editColumn->range_h = $request->range_h;
         $editColumn->save();
         return redirect()->route('column_setting', ['tableId' => $request->tableId, 'columnId' => $request->columnId]);
     }

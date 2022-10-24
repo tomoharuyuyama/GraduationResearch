@@ -28,6 +28,14 @@ class GeneralController extends Controller
 
         return redirect()->route('top_page');
     }
+    public function edit_table_name(Request $request)
+    {
+        $editTable = OriginalTable::find($request->tableId);
+        $editTable->name = $request->table_name;
+        $editTable->save();
+
+        return redirect()->route('table_setting', ['tableId' => $request->tableId]);
+    }
     public function add_column(Request $request)
     {
         // カラムインサート

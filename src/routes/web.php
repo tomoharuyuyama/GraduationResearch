@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\General\GeneralController@index')->name('top_page');
 Route::post('/', 'App\Http\Controllers\General\GeneralController@add_table')->name('add_table');
+Route::post('/edit-table-name', 'App\Http\Controllers\General\GeneralController@edit_table_name')->name('edit_table_name');
 Route::post('/add-column', 'App\Http\Controllers\General\GeneralController@add_column')->name('add_column');
 Route::get('/delete-column', 'App\Http\Controllers\General\GeneralController@delete_column')->name('delete_column');
 Route::get('/{tableId}/delete', 'App\Http\Controllers\General\GeneralController@delete_table')->name('delete_table');

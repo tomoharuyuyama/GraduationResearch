@@ -4,7 +4,8 @@
     </x-slot>
     <h2 class="bold text-3xl mb-14">テーブル設定</h2>
     <h3 class="bold text-1xl font-bold mb-5">Edit table name</h3>
-    <form action="" method="post" class="mb-5">
+    <form action="{{ route('edit_table_name', ['tableId' => $selectedTable->id]) }}" method="post" class="mb-5">
+        @csrf
         <div class="flex mb-5">
             <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
             <button

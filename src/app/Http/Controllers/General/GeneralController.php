@@ -100,7 +100,8 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        return view('column-setting', compact('tables', 'selectedTable', 'columnId'));
+        $selectedColumn = TableColumn::find($columnId);
+        return view('column-setting', compact('tables', 'selectedTable', 'columnId', 'selectedColumn'));
     }
     public function teacherData(Request $request, $tableId)
     {

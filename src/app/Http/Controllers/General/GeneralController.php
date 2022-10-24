@@ -30,7 +30,6 @@ class GeneralController extends Controller
     }
     public function add_column(Request $request)
     {
-        // dd($request);
         // カラムインサート
         $newColumn = new TableColumn;
         $newColumn->column_name = $request->column_name;
@@ -49,6 +48,11 @@ class GeneralController extends Controller
         // オリジナルテーブルを削除
         OriginalTable::where('id', $tableId)->delete();
         return redirect()->route('top_page');
+    }
+    public function delete_column(Request $request)
+    {
+        TableColumn::where('id', $request->columnId)->delete();
+        return redirect()->route('table_setting', ['tableId' => $request->tableId]);
     }
     public function tableList(Request $request, $tableId)
     {

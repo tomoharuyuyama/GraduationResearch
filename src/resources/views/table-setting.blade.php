@@ -26,20 +26,27 @@
             <tbody>
                 @foreach ($tableColumns as $index => $tableColumn)
                     <tr class="pb-5">
-                        <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">{{ $tableColumn->column_name }}</td>
-                        <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">{{ $recordCounts[$index] }}</td>
+                        <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">
+                            {{ $tableColumn->column_name }}</td>
+                        <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }}">
+                            {{ $recordCounts[$index] }}</td>
                         <td class="{{ !$loop->last ? 'pb-5 border-b border-slate-300' : null }} flex flex-row-reverse">
-                            <a href="{{ route('column_setting', ['tableId' => $selectedTable->id, 'columnId' => $tableColumn->id]) }}">
+                            <a
+                                href="{{ route('column_setting', ['tableId' => $selectedTable->id, 'columnId' => $tableColumn->id]) }}">
                                 <button
                                     class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold border border-slate-300 ml-3">
                                     <input type="submit" value="Setting" class="text-slate-300">
                                 </button>
                             </a>
-                            <button
-                                class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold ml-5 border border-red-300">
-                                <input type="submit" value="Delete" class="text-red-300">
-                            </button>
+
+                            <a
+                                href="{{ route('delete_column', ['tableId' => $selectedTable->id, 'columnId' => $tableColumn->id]) }}">
+                                <button
+                                    class="text-white rounded-md bg-transparent block px-3 py-1 text-right font-bold ml-5 border border-red-300">
+                                    <input type="submit" value="Delete" class="text-red-300">
+                                </button>
                         </td>
+                        </a>
                     </tr>
                 @endforeach
             </tbody>

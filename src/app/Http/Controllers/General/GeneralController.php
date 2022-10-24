@@ -28,6 +28,22 @@ class GeneralController extends Controller
 
         return redirect()->route('top_page');
     }
+    public function add_column(Request $request)
+    {
+        // dd($request);
+        // カラムインサート
+        $newColumn = new TableColumn;
+        $newColumn->column_name = $request->column_name;
+        $newColumn->table_id = $request->tableId;
+        $newColumn->detection_type = 'Consistent';
+        $newColumn->range_x = 0;
+        $newColumn->range_y = 0;
+        $newColumn->range_h = 0;
+        $newColumn->range_w = 0;
+        $newColumn->save();
+
+        return redirect()->route('table_setting', ['tableId' => $request->tableId]);
+    }
     public function delete_table(Request $request, $tableId)
     {
         // オリジナルテーブルを削除

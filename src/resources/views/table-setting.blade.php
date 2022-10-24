@@ -46,9 +46,10 @@
         </table>
     </div>
     <h3 class="bold text-1xl mb-5 font-bold">Add column</h3>
-    <form action="" method="post" class="">
+    <form action="{{ route('add_column', ['tableId' => $selectedTable->id]) }}" method="post" class="">
+        @csrf
         <div class="flex mb-5">
-            <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
+            <input type="text" name="column_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
             <button
                 class="text-white rounded-md bg-indigo-300 block px-8 h-auto mb-5 text-right drop-shadow-md font-bold ml-5 mb-5">
                 <input type="submit" value="Submit" class="">

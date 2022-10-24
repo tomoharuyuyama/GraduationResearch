@@ -7,7 +7,7 @@
     <form action="{{ route('edit_table_name', ['tableId' => $selectedTable->id]) }}" method="post" class="mb-5">
         @csrf
         <div class="flex mb-5">
-            <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
+            <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5" value="{{ $selectedTable->name }}">
             <button
                 class="text-white rounded-md bg-indigo-300 block px-8 h-auto mb-5 text-right drop-shadow-md font-bold ml-5 mb-5">
                 <input type="submit" value="Submit" class="">

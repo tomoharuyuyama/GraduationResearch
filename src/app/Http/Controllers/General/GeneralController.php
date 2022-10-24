@@ -103,6 +103,13 @@ class GeneralController extends Controller
         $selectedColumn = TableColumn::find($columnId);
         return view('column-setting', compact('tables', 'selectedTable', 'columnId', 'selectedColumn'));
     }
+    public function editColumn(Request $request)
+    {
+        $editColumn = TableColumn::find($request->columnId);
+        $editColumn->column_name = $request->column_name;
+        $editColumn->save();
+        return redirect()->route('column_setting', ['tableId' => $request->tableId, 'columnId' => $request->columnId]);
+    }
     public function teacherData(Request $request, $tableId)
     {
         $tables = OriginalTable::all();

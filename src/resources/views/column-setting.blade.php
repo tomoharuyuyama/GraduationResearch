@@ -66,7 +66,7 @@
             </div>
         </div>
     </form>
-    <a href="{{ route('teacher_data', ['tableId' => $selectedTable->id]) }}" class="font-bold block mb-5 pb-5">
+    <a href="{{ route('teacher_data', ['tableId' => $selectedTable->id, 'columnId' => $selectedColumn->id]) }}" class="font-bold block mb-5 pb-5">
         教師データ確認ページ→
     </a>
     <a href="{{ route('table_setting', ['tableId' => $selectedTable->id]) }}">

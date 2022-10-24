@@ -55,14 +55,12 @@
                 </table>
             </div>
         </div>
-        {{-- <form action="" method="post" class=""> --}}
         <div class="flex">
-            <a href="{{ route('column_setting', ['tableId' => $selectedTable->id]) }}">
+            <a href="{{ route('column_setting', ['tableId' => $selectedTable->id, 'columnId' => $selectedColumn->id]) }}">
                 <button
                     class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
                     Back
                 </button>
             </a>
         </div>
-        {{-- </form> --}}
 </x-app>

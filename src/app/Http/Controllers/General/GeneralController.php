@@ -118,7 +118,8 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        return view('teacher-data', compact('tables', 'selectedTable'));
+        $selectedColumn = TableColumn::find($request->columnId);
+        return view('teacher-data', compact('tables', 'selectedTable', 'selectedColumn'));
     }
     public function recordList(Request $request, $tableId)
     {

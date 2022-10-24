@@ -86,7 +86,7 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        $tableColumns = TableColumn::all();
+        $tableColumns = TableColumn::where('table_id', $tableId)->get();
 
         $recordCounts = [];
         foreach ($tableColumns as $tableColumn) {

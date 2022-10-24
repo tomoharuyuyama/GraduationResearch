@@ -67,14 +67,12 @@
             </table>
         </div>
     </div>
-    <form action="" method="post" class="">
-        <div class="flex">
-            <a href="{{ route('table_list', ['tableId' => $selectedTable->id]) }}">
-                <button
-                    class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
-                    Back
-                </button>
-            </a>
-        </div>
-    </form>
+    <div class="flex">
+        <a href="{{ route('table_list', ['tableId' => $selectedTable->id]) }}">
+            <button
+                class="text-center bg-white text-slate-300 rounded-md bg-transparent block w-32 py-3 mb-5 text-right font-bold border border-slate-300 drop-shadow-md">
+                Back
+            </button>
+        </a>
+    </div>
 </x-app>

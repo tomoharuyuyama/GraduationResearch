@@ -9,6 +9,7 @@ use App\Models\OriginalTable;
 use App\Models\Record;
 use App\Models\TableColumn;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class GeneralController extends Controller
 {
@@ -136,5 +137,22 @@ class GeneralController extends Controller
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
         return view('record-list', compact('tables', 'selectedTable'));
+    }
+
+
+    // python
+    public function execute_python(Request $request)
+    {
+      $path = app_path() . "/Python/app.py";
+      $image_pass = $request->hoge;
+      $command = "python3 " . $path . " " . $image_pass;
+      exec($command, $output);
+      dd($output);
+      // return view('index', compact('output'));
+    }
+    public function python()
+    {
+      $tables = OriginalTable::all();
+      return view('python', compact('tables'));
     }
 }

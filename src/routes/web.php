@@ -31,3 +31,5 @@ Route::get('/{tableId}/{columnId}/column-setting', 'App\Http\Controllers\General
 Route::post('/column-setting', 'App\Http\Controllers\General\GeneralController@editColumn')->name('edit_column');
 Route::get('/{tableId}/teacher-data', 'App\Http\Controllers\General\GeneralController@teacherData')->name('teacher_data');
 Route::get('/{tableId}/record-list', 'App\Http\Controllers\General\GeneralController@recordList')->name('record_list');
+Route::get('/python', 'App\Http\Controllers\General\GeneralController@python')->name('python');
+Route::post('/python', 'App\Http\Controllers\General\GeneralController@execute_python')->name('execute_python');

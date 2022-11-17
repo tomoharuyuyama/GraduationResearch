@@ -10,11 +10,11 @@
         <div class="flex mb-5">
             <div class="">
                 <p class="bold text-1xl font-bold mb-5">Base image</p>
-                <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
+                <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="pb-5">
             </div>
             {{-- <div class="">
                 <p class="bold text-1xl font-bold mb-5">Upload image</p>
-                <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5 pl-5">
+                <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="pb-5 pl-5">
             </div> --}}
         </div>
         <div class="flex">

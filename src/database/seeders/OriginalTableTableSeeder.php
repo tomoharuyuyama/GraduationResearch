@@ -18,15 +18,19 @@ class OriginalTableTableSeeder extends Seeder
         DB::table('original_tables')->insert([
             [
                 'name' => 'スプラトゥーン3',
-                'base_img_path' => 'sample_spla.png',
+                'base_img_path' => 'images/sample_spla3.jpeg',
             ],
             [
                 'name' => 'スプラトゥーン2',
-                'base_img_path' => 'sample_spla.png',
+                'base_img_path' => 'images/sample_spla2.png',
             ],
             [
                 'name' => 'ポーカー',
-                'base_img_path' => 'sample_spla.png',
+                'base_img_path' => 'images/sample_poker.jpeg',
+            ],
+            [
+                'name' => '将棋',
+                'base_img_path' => 'images/sample_shogi.jpeg',
             ],
         ]);
     }

@@ -45,12 +45,12 @@
         </table>
     </div>
     <h3 class="bold text-1xl mb-5 font-bold">Add table</h3>
-    <form action="{{ route('add_table') }}" method="post">
+    <form action="{{ route('add_table') }}" method="post" enctype="multipart/form-data">
         @csrf
         <p class="bold text-1xl">Table name</p>
         <input type="text" name="table_name" class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5">
         <p class="bold text-1xl">Upload base image</p>
-        <input type="file" name="base_image" class="w-full border-slate-300 border-1 h-10">
+        <input type="file" name="base_image" class="w-full border-slate-300 border-1 h-10" enctype="multipart/form-data">
         <button
             class="text-white rounded-md bg-indigo-300 block px-8 py-3 mb-5 text-right ml-auto drop-shadow-md font-bold">
             <input type="submit" value="Submit" class="">

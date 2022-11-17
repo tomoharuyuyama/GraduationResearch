@@ -5,7 +5,7 @@
     <h2 class="bold text-3xl mb-14">教師データ</h2>
     <div class="">
         <p class="bold text-1xl font-bold mb-5">Base image</p>
-        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
+        <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="pb-5">
     </div>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Columun name</p>

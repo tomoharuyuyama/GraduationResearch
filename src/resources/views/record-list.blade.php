@@ -5,11 +5,11 @@
     <h2 class="bold text-3xl mb-14">レコード一覧</h2>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Table name</p>
-        <div class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5 bg-white pt-2">スプラトゥーン2</div>
+        <div class="w-full border-slate-300 border-1 h-10 mb-5 rounded-md pl-5 bg-white pt-2">{{ $selectedTable->name }}</div>
     </div>
     <div class="">
         <p class="bold text-1xl font-bold mb-5">Base image</p>
-        <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
+        <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="pb-5">
     </div>
     <div class=" pb-5">
         <p class="bold text-1xl font-bold mb-5">Date table</p>

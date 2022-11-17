@@ -18,7 +18,7 @@
                     </button>
                 </div>
             </div>
-            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="h-full w-auto">
+            <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="h-full w-auto">
         </div>
         <h3 class="bold text-1xl font-bold mb-5">Setting range of detection</h3>
         <div class="mb-5 pb-5 flex justify-between mb-5 pb-5">

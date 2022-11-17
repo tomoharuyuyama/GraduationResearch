@@ -25,7 +25,7 @@
             </a>
         </div>
         <div class="ml-10">
-            <img src="{{ asset('images/sample_spla.png') }}" alt="preview image" class="pb-5">
+            <img src="{{ asset($selectedTable->base_img_path) }}" alt="preview image" class="pb-5">
         </div>
     </div>
     <a href="{{ route('top_page') }}">

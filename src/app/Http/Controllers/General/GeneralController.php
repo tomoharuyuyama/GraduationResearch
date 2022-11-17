@@ -20,10 +20,20 @@ class GeneralController extends Controller
     }
     public function add_table(Request $request)
     {
+        // dd($request);
+        // ディレクトリ名
+        $dir = 'baseImages';
+
+        // アップロードされたファイル名を取得
+        $file_name = $request->file('base_image')->getClientOriginalName();
+
+        // sampleディレクトリに画像を保存
+        $request->file('base_image')->storeAs('public/' . $dir, $file_name);
+
         // オリジナルテーブルインサート
         $newTable = new OriginalTable;
         $newTable->name = $request->table_name;
-        $newTable->base_img_path = $request->base_image;
+        $newTable->base_img_path = 'storage/' . $dir . '/' . $file_name;
         $newTable->save();
 
         return redirect()->route('top_page');

@@ -6,7 +6,7 @@
 
     {{-- <form action="" method="post" class=""> --}}
         <h3 class="bold text-1xl mb-5 font-bold">Upload image</h3>
-        <input type="file" name="base_image" class="w-full border-slate-300 border-1 h-10 mb-5">
+        <input type="file" name="base_image[]" class="w-full border-slate-300 border-1 h-10 mb-5" multiple>
         <div class="flex mb-5">
             <div class="">
                 <p class="bold text-1xl font-bold mb-5">Base image</p>

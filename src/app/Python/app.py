@@ -62,8 +62,9 @@ from PIL import Image
 # url_img = '../public/images/screen.png'
 # url_img = 'src/public/images/screen.png'
 # url_img = 'src/public/images/string.png'
-url_img = 'src/public/images/numbers.png'
+# url_img = 'src/public/images/numbers.png'
+url_img = 'src/public/images/string_jp.png'
 # url_img = 'src/public/images/screen3.png'
 img = Image.open(url_img)
-number = pytesseract.image_to_string(img)
+number = pytesseract.image_to_string(img, lang="jpn")
 print (number)

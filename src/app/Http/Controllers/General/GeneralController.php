@@ -145,7 +145,7 @@ class GeneralController extends Controller
     {
       $path = app_path() . "/Python/app.py";
       $image_pass = $request->hoge;
-      $command = "python3 " . $path . " " . $image_pass;
+      $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $image_pass;
       exec($command, $output);
       dd($output);
       // return view('index', compact('output'));

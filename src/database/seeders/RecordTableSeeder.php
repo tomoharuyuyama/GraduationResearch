@@ -17,17 +17,20 @@ class RecordTableSeeder extends Seeder
     {
         DB::table('records')->insert([
             [
-                'teacher_data_id' => 1,
+                // 'teacher_data_id' => 1,
+                'img_path' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],
             [
-                'teacher_data_id' => 1,
+                // 'teacher_data_id' => 1,
+                'img_path' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],
             [
-                'teacher_data_id' => 2,
+                // 'teacher_data_id' => 2,
+                'img_path' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_data_id')->comment('検出したデータの外部キー');
+            // $table->integer('teacher_data_id')->comment('検出したデータの外部キー');
+            $table->string('img_path');
             $table->integer('original_table_id')->comment('対応するテーブルの外部キー');
             $table->integer('column_id')->comment('対応するカラムの外部キー');
             $table->timestamps();

@@ -25,6 +25,7 @@ Route::get('/delete-column', 'App\Http\Controllers\General\GeneralController@del
 Route::get('/{tableId}/delete', 'App\Http\Controllers\General\GeneralController@delete_table')->name('delete_table');
 Route::get('/{tableId}/table-list', 'App\Http\Controllers\General\GeneralController@tableList')->name('table_list');
 Route::get('/{tableId}/upload', 'App\Http\Controllers\General\GeneralController@upload')->name('upload');
+Route::post('/upload', 'App\Http\Controllers\General\GeneralController@uploadImg')->name('upload_img');
 Route::get('/{tableId}/result', 'App\Http\Controllers\General\GeneralController@result')->name('result');
 Route::get('/{tableId}/table-setting', 'App\Http\Controllers\General\GeneralController@tableSetting')->name('table_setting');
 Route::get('/{tableId}/{columnId}/column-setting', 'App\Http\Controllers\General\GeneralController@columnSetting')->name('column_setting');

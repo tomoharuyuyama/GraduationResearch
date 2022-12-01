@@ -87,6 +87,27 @@ class GeneralController extends Controller
         // dd($selectedTable);
         return view('upload', compact('tables', 'selectedTable'));
     }
+    public function uploadImg(Request $request)
+    {
+                // dd($request);
+        // ディレクトリ名
+        $dir = 'uploadImages';
+
+        // アップロードされたファイル名を取得
+        $file_name = $request->file('upload_image')->getClientOriginalName();
+
+        // sampleディレクトリに画像を保存
+        $request->file('upload_image')->storeAs('public/' . $dir, $file_name);
+
+        // レコードインサート
+        $record = new Record();
+        $record->img_path = 'storage/' . $dir . '/' . $file_name;
+        $record->original_table_id = $request->original_table_id;
+        $record->column_id = 0;
+        $record->save();
+        
+        return redirect()->route('upload', ['tableId' => $request->original_table_id]);
+    }
     public function result(Request $request, $tableId)
     {
         $tables = OriginalTable::all();

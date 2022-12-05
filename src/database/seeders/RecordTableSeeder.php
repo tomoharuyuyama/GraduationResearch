@@ -19,18 +19,21 @@ class RecordTableSeeder extends Seeder
             [
                 // 'teacher_data_id' => 1,
                 'img_path' => 'test',
+                'value' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],
             [
                 // 'teacher_data_id' => 1,
                 'img_path' => 'test',
+                'value' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],
             [
                 // 'teacher_data_id' => 2,
                 'img_path' => 'test',
+                'value' => 'test',
                 'original_table_id' => 1,
                 'column_id' => 1,
             ],

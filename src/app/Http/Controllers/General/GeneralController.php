@@ -104,8 +104,20 @@ class GeneralController extends Controller
         $record->img_path = 'storage/' . $dir . '/' . $file_name;
         $record->original_table_id = $request->original_table_id;
         $record->column_id = 0;
-        $record->save();
         
+        // python検証
+        $path = app_path() . "/Python/app.py";
+        $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
+        exec($command, $output);
+        explode(',', $output[1]);
+        $output = array_diff($output, array(""));
+        
+        // dbに保存
+        // dd($output);
+        $record->value = $output[1];
+        // dd($record);
+        $record->save();
+
         return redirect()->route('upload', ['tableId' => $request->original_table_id]);
     }
     public function result(Request $request, $tableId)

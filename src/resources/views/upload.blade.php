@@ -8,7 +8,7 @@
     <form action="{{ route('upload_img') }}" method="post" enctype="multipart/form-data">
       @csrf
         <h3 class="bold text-1xl mb-5 font-bold">Upload image</h3>
-        <input type="file" name="upload_image" class="w-full border-slate-300 border-1 h-10 mb-5" multiple>
+        <input type="file" name="upload_image[]" class="w-full border-slate-300 border-1 h-10 mb-5" multiple>
         <input type="text" hidden value="{{ $selectedTable->id }}" name="original_table_id">
         <div class="flex mb-5">
             <div class="">

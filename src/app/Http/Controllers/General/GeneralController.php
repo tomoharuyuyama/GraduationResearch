@@ -87,22 +87,22 @@ class GeneralController extends Controller
         // dd($selectedTable);
         return view('upload', compact('tables', 'selectedTable'));
     }
-    public function uploadImg(Request $request)
+    private function storeRecord($img_data, $original_table_id)
     {
                 // dd($request);
         // ディレクトリ名
         $dir = 'uploadImages';
 
         // アップロードされたファイル名を取得
-        $file_name = $request->file('upload_image')->getClientOriginalName();
+        $file_name = $img_data->getClientOriginalName();
 
         // sampleディレクトリに画像を保存
-        $request->file('upload_image')->storeAs('public/' . $dir, $file_name);
+        $img_data->storeAs('public/' . $dir, $file_name);
 
         // レコードインサート
         $record = new Record();
         $record->img_path = 'storage/' . $dir . '/' . $file_name;
-        $record->original_table_id = $request->original_table_id;
+        $record->original_table_id = $original_table_id;
         $record->column_id = 0;
         
         // python検証
@@ -116,8 +116,13 @@ class GeneralController extends Controller
         // dd($output);
         $record->value = $output[1];
         // dd($record);
-        $record->save();
-
+        return $record->save();
+    }
+    public function uploadImg(Request $request)
+    {
+      foreach ($request->file('upload_image') as $upload_image) {
+        $this->storeRecord($upload_image, $request->original_table_id);
+      }
         return redirect()->route('upload', ['tableId' => $request->original_table_id]);
     }
     public function result(Request $request, $tableId)

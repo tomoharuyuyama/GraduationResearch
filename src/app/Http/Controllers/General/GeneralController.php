@@ -109,14 +109,18 @@ class GeneralController extends Controller
         $path = app_path() . "/Python/app.py";
         $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
         exec($command, $output);
-        explode(',', $output[1]);
-        $output = array_diff($output, array(""));
-        
-        // dbに保存
-        // dd($output);
-        $record->value = $output[1];
-        // dd($record);
-        return $record->save();
+        if (count($output) == 2) {
+          # code...
+          explode(',', $output[1]);
+          $output = array_diff($output, array(""));
+          
+          // dbに保存
+          // dd($output);
+          $record->value = $output[1];
+          // dd($record);
+          $record->save();
+        }
+        return;
     }
     public function uploadImg(Request $request)
     {

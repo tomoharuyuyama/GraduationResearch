@@ -10,6 +10,7 @@ use App\Models\Record;
 use App\Models\TableColumn;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class GeneralController extends Controller
 {
@@ -202,37 +203,44 @@ class GeneralController extends Controller
     /**
      * CSV出力
      */
-    public function postCSV()
+    public function getCSV($tableId)
     {
-        // データの作成
-        $users = [
-            ['name' => '太郎', 'age' => 24],
-            ['name' => '花子', 'age' => 21]
+        $selectedTable = OriginalTable::find($tableId);
+        $logs = Record::where('original_table_id', $tableId)->get()->toArray();
+        $fileName = $selectedTable->name . '-table-log-' . now()->format('YmdHis') . '.csv';
+        // csvのカラム名
+        $header = [
+            'id',
+            'value',
+            'created_at',
         ];
-        // カラムの作成
-        $head = ['名前', '年齢'];
 
-        // 書き込み用ファイルを開く
-        $f = fopen('test.csv', 'w');
-        if ($f) {
-            // カラムの書き込み
-            mb_convert_variables('SJIS', 'UTF-8', $head);
-            fputcsv($f, $head);
-            // データの書き込み
-            foreach ($users as $user) {
-                mb_convert_variables('SJIS', 'UTF-8', $user);
-                fputcsv($f, $user);
-            }
+        $returnValue = collect();
+        foreach ($logs as $index => $log) {
+            $returnValue->push([$log['id'], $log['value'], $log['created_at']]);
         }
-        // ファイルを閉じる
-        fclose($f);
 
-        // HTTPヘッダ
-        header("Content-Type: application/octet-stream");
-        header('Content-Length: ' . filesize('test.csv'));
-        header('Content-Disposition: attachment; filename=test.csv');
-        readfile('test.csv');
+        // レスポンスにCSVを乗せるためにSymphonyのStreamedResponseを使用
+        $response = new StreamedResponse();
+        $response->setCallback(function () use ($header, $returnValue) {
+            // 一時的に保存
+            $outputStream = new \SplFileObject('php://output', 'w');
+            // 文字化け対策
+            mb_convert_variables('SJIS-win', 'UTF-8', $header);
+            $outputStream->fputcsv($header);
+            flush();
+            foreach ($returnValue as $row) {
+                mb_convert_variables('SJIS-win', 'UTF-8', $row);
+                $outputStream->fputcsv($row);
+                flush();
+            }
+        });
 
-        return view('user.index', compact('users'));
+        // レスポンスの形式を定義（ファイル名やファイルの種類、文字コード）
+        $response->setCharset('SJIS-win');
+        $response->headers->set('Content-Disposition', "attachment; filename={$fileName}");
+        $response->headers->set('Content-Type', 'application/octet-stream');
+
+        return $response;
     }
 }

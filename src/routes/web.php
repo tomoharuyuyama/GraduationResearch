@@ -34,3 +34,4 @@ Route::get('/{tableId}/teacher-data', 'App\Http\Controllers\General\GeneralContr
 Route::get('/{tableId}/record-list', 'App\Http\Controllers\General\GeneralController@recordList')->name('record_list');
 Route::get('/python', 'App\Http\Controllers\General\GeneralController@python')->name('python');
 Route::post('/python', 'App\Http\Controllers\General\GeneralController@execute_python')->name('execute_python');
+Route::get('/{tableId}/getCSV', 'App\Http\Controllers\General\GeneralController@getCSV')->name('get_csv');

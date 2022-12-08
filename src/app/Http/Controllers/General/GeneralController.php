@@ -89,7 +89,7 @@ class GeneralController extends Controller
     }
     private function storeRecord($img_data, $original_table_id)
     {
-                // dd($request);
+        // dd($request);
         // ディレクトリ名
         $dir = 'uploadImages';
 
@@ -104,29 +104,29 @@ class GeneralController extends Controller
         $record->img_path = 'storage/' . $dir . '/' . $file_name;
         $record->original_table_id = $original_table_id;
         $record->column_id = 0;
-        
+
         // python検証
         $path = app_path() . "/Python/app.py";
         $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
         exec($command, $output);
         if (count($output) == 2) {
-          # code...
-          explode(',', $output[1]);
-          $output = array_diff($output, array(""));
-          
-          // dbに保存
-          // dd($output);
-          $record->value = $output[1];
-          // dd($record);
-          $record->save();
+            # code...
+            explode(',', $output[1]);
+            $output = array_diff($output, array(""));
+
+            // dbに保存
+            // dd($output);
+            $record->value = $output[1];
+            // dd($record);
+            $record->save();
         }
         return;
     }
     public function uploadImg(Request $request)
     {
-      foreach ($request->file('upload_image') as $upload_image) {
-        $this->storeRecord($upload_image, $request->original_table_id);
-      }
+        foreach ($request->file('upload_image') as $upload_image) {
+            $this->storeRecord($upload_image, $request->original_table_id);
+        }
         return redirect()->route('upload', ['tableId' => $request->original_table_id]);
     }
     public function result(Request $request, $tableId)
@@ -186,16 +186,53 @@ class GeneralController extends Controller
     // python
     public function execute_python(Request $request)
     {
-      $path = app_path() . "/Python/app.py";
-      $image_pass = $request->hoge;
-      $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $image_pass;
-      exec($command, $output);
-      dd($output);
-      // return view('index', compact('output'));
+        $path = app_path() . "/Python/app.py";
+        $image_pass = $request->hoge;
+        $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $image_pass;
+        exec($command, $output);
+        dd($output);
+        // return view('index', compact('output'));
     }
     public function python()
     {
-      $tables = OriginalTable::all();
-      return view('python', compact('tables'));
+        $tables = OriginalTable::all();
+        return view('python', compact('tables'));
+    }
+
+    /**
+     * CSV出力
+     */
+    public function postCSV()
+    {
+        // データの作成
+        $users = [
+            ['name' => '太郎', 'age' => 24],
+            ['name' => '花子', 'age' => 21]
+        ];
+        // カラムの作成
+        $head = ['名前', '年齢'];
+
+        // 書き込み用ファイルを開く
+        $f = fopen('test.csv', 'w');
+        if ($f) {
+            // カラムの書き込み
+            mb_convert_variables('SJIS', 'UTF-8', $head);
+            fputcsv($f, $head);
+            // データの書き込み
+            foreach ($users as $user) {
+                mb_convert_variables('SJIS', 'UTF-8', $user);
+                fputcsv($f, $user);
+            }
+        }
+        // ファイルを閉じる
+        fclose($f);
+
+        // HTTPヘッダ
+        header("Content-Type: application/octet-stream");
+        header('Content-Length: ' . filesize('test.csv'));
+        header('Content-Disposition: attachment; filename=test.csv');
+        readfile('test.csv');
+
+        return view('user.index', compact('users'));
     }
 }

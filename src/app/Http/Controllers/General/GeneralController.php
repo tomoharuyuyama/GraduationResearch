@@ -178,7 +178,8 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        return view('record-list', compact('tables', 'selectedTable'));
+        $records = Record::where('original_table_id', $tableId)->get();
+        return view('record-list', compact('tables', 'selectedTable', 'records'));
     }
 
 

@@ -86,51 +86,49 @@ class GeneralController extends Controller
     {
         $tables = OriginalTable::all();
         $selectedTable = OriginalTable::find($tableId);
-        // dd($selectedTable);
         return view('upload', compact('tables', 'selectedTable'));
     }
     private function storeRecord($img_data, $original_table_id)
     {
-        // dd($request);
+        $columns = TableColumn::where('table_id', $original_table_id)->get();
         // ディレクトリ名
         $dir = 'uploadImages';
 
         // アップロードされたファイル名を取得
         $file_name = $img_data->getClientOriginalName();
-
         $img = Image::make($img_data);
-        // dd($img_data);
-        $width = 500;
-        $height = 95;
-        $x = 0;
-        $y = 0;
 
-        $img_data = $img->crop($width, $height, $x, $y);
-
-        // レコードインサート
-        $record = new Record();
-        $record->img_path = 'storage/' . $dir . '/' . $file_name;
-        $record->original_table_id = $original_table_id;
-        $record->column_id = 0;
-
-        // sampleディレクトリに画像を保存
-        $img->save('../storage/app/public/uploadImages/' . $file_name, 60);
-
-        // python検証
-        $path = app_path() . "/Python/app.py";
-        $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
-        exec($command, $output);
-        // dd($output);
-        if (count($output) == 2) {
-            # code...
-            explode(',', $output[1]);
-            $output = array_diff($output, array(""));
-
-            // dbに保存
-            // dd($output);
-            $record->value = $output[1];
-            // dd($record);
-            $record->save();
+        foreach ($columns as $value) {
+          $width = $value->range_w;
+          $height = $value->range_h;
+          $x = $value->range_x;
+          $y = $value->range_y;
+  
+          $img_data = $img->crop($width, $height, $x, $y);
+  
+          // レコードインサート
+          $record = new Record();
+          $record->img_path = 'storage/' . $dir . '/' . $file_name;
+          $record->original_table_id = $original_table_id;
+          $record->column_id = 0;
+  
+          // sampleディレクトリに画像を保存
+          $img->save('../storage/app/public/uploadImages/' . $file_name, 60);
+  
+          // python検証
+          $path = app_path() . "/Python/app.py";
+          $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
+          exec($command, $output);
+  
+          if (count($output) == 2) {
+              # code...
+              explode(',', $output[1]);
+              $output = array_diff($output, array(""));
+  
+              // dbに保存
+              $record->value = $output[1];
+              $record->save();
+          }
         }
         return;
     }

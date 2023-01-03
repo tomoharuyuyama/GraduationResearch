@@ -3,6 +3,7 @@
         データ収集 | 画像アップロード
     </x-slot>
     <h2 class="bold text-3xl mb-14">画像アップロード</h2>
+    {{-- {{phpinfo();}} --}}
 
     {{-- <form action="" method="post" class=""> --}}
     <form action="{{ route('upload_img') }}" method="post" enctype="multipart/form-data">

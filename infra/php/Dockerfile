@@ -14,6 +14,9 @@ RUN apt-get update && \
   apt-get install -y nodejs && \
   npm install npm@latest -g
 
+RUN docker-php-ext-configure gd --with-jpeg
+RUN docker-php-ext-install -j$(nproc) gd
+
 COPY ./php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /data

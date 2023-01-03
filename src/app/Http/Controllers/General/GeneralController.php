@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\OriginalTable;
 use App\Models\Record;
 use App\Models\TableColumn;
+use Intervention\Image\Facades\Image;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -97,8 +98,14 @@ class GeneralController extends Controller
         // アップロードされたファイル名を取得
         $file_name = $img_data->getClientOriginalName();
 
-        // sampleディレクトリに画像を保存
-        $img_data->storeAs('public/' . $dir, $file_name);
+        $img = Image::make($img_data);
+        // dd($img_data);
+        $width = 500;
+        $height = 95;
+        $x = 0;
+        $y = 0;
+
+        $img_data = $img->crop($width, $height, $x, $y);
 
         // レコードインサート
         $record = new Record();
@@ -106,10 +113,14 @@ class GeneralController extends Controller
         $record->original_table_id = $original_table_id;
         $record->column_id = 0;
 
+        // sampleディレクトリに画像を保存
+        $img->save('../storage/app/public/uploadImages/' . $file_name, 60);
+
         // python検証
         $path = app_path() . "/Python/app.py";
         $command = "export LANG=ja_JP.UTF-8; python3 " . $path . " " . $file_name;
         exec($command, $output);
+        // dd($output);
         if (count($output) == 2) {
             # code...
             explode(',', $output[1]);
